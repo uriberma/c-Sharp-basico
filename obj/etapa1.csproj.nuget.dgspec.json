@@ -1,0 +1,58 @@
+{
+  "format": 1,
+  "restore": {
+    "/Users/maycolur7/source/courses/platzi/fundamentos_c#_.net_core/etapa1/etapa1.csproj": {}
+  },
+  "projects": {
+    "/Users/maycolur7/source/courses/platzi/fundamentos_c#_.net_core/etapa1/etapa1.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/maycolur7/source/courses/platzi/fundamentos_c#_.net_core/etapa1/etapa1.csproj",
+        "projectName": "etapa1",
+        "projectPath": "/Users/maycolur7/source/courses/platzi/fundamentos_c#_.net_core/etapa1/etapa1.csproj",
+        "packagesPath": "/Users/maycolur7/.nuget/packages/",
+        "outputPath": "/Users/maycolur7/source/courses/platzi/fundamentos_c#_.net_core/etapa1/obj/",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "/Users/maycolur7/.config/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp2.2"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp2.2": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp2.2": {
+          "dependencies": {
+            "Microsoft.NETCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.2.0, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461"
+          ],
+          "assetTargetFallback": true,
+          "warn": true
+        }
+      }
+    }
+  }
+}

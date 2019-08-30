@@ -1,0 +1,11 @@
+/Users/maycolur7/source/courses/platzi/fundamentos_c#_.net_core/etapa1/bin/Debug/netcoreapp2.2/etapa1.deps.json
+/Users/maycolur7/source/courses/platzi/fundamentos_c#_.net_core/etapa1/bin/Debug/netcoreapp2.2/etapa1.runtimeconfig.json
+/Users/maycolur7/source/courses/platzi/fundamentos_c#_.net_core/etapa1/bin/Debug/netcoreapp2.2/etapa1.runtimeconfig.dev.json
+/Users/maycolur7/source/courses/platzi/fundamentos_c#_.net_core/etapa1/bin/Debug/netcoreapp2.2/etapa1.dll
+/Users/maycolur7/source/courses/platzi/fundamentos_c#_.net_core/etapa1/bin/Debug/netcoreapp2.2/etapa1.pdb
+/Users/maycolur7/source/courses/platzi/fundamentos_c#_.net_core/etapa1/obj/Debug/netcoreapp2.2/etapa1.csprojAssemblyReference.cache
+/Users/maycolur7/source/courses/platzi/fundamentos_c#_.net_core/etapa1/obj/Debug/netcoreapp2.2/etapa1.csproj.CoreCompileInputs.cache
+/Users/maycolur7/source/courses/platzi/fundamentos_c#_.net_core/etapa1/obj/Debug/netcoreapp2.2/etapa1.AssemblyInfoInputs.cache
+/Users/maycolur7/source/courses/platzi/fundamentos_c#_.net_core/etapa1/obj/Debug/netcoreapp2.2/etapa1.AssemblyInfo.cs
+/Users/maycolur7/source/courses/platzi/fundamentos_c#_.net_core/etapa1/obj/Debug/netcoreapp2.2/etapa1.dll
+/Users/maycolur7/source/courses/platzi/fundamentos_c#_.net_core/etapa1/obj/Debug/netcoreapp2.2/etapa1.pdb
