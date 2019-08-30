@@ -30,14 +30,14 @@ namespace etapa1
 
             cursos[2] = new Curso()
             {
-                Nombre = "Ciencias",
-                Jornada = TiposJornada.Tarde,
+                Nombre = "Bioligia",
+                Jornada = TiposJornada.Noche,
             };
 
             // ejecucion
             Console.WriteLine(escuela2.MuestraEscuela());
             Console.WriteLine("===============CURSOS=========");
-            ImprimirCursosWhile(cursos);
+            ImprimirCursosForEach(cursos);
 
         }
 
@@ -48,6 +48,34 @@ namespace etapa1
             {
                 Console.WriteLine($"Nombre: {cursos[contador].Nombre}, id: {cursos[contador].UniqueId}");
                 contador++;
+            }
+        }
+
+        private static void ImprimirCursosDoWhile(Curso[] cursos)
+        {
+            int contador = 0;
+            do
+            {
+                Console.WriteLine($"Nombre: {cursos[contador].Nombre}, id: {cursos[contador].UniqueId}");
+            }
+            while (++contador < cursos.Length);
+        }
+
+        private static void ImprimirCursosFor(Curso[] cursos)
+
+        {
+            for (int i = 0; i < cursos.Length; i++)
+            {
+                Console.WriteLine($"Nombre: {cursos[i].Nombre}, id: {cursos[i].UniqueId}");
+            }
+        }
+
+        private static void ImprimirCursosForEach(Curso[] cursos)
+
+        {
+            foreach(var curso in cursos)
+            {
+                Console.WriteLine($"Nombre: {curso.Nombre}, id: {curso.UniqueId}");
             }
         }
     }
