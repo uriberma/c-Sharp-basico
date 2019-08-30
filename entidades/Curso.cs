@@ -1,4 +1,4 @@
-﻿using System;
+﻿using static System.Guid;
 
 namespace CoreEscuela.Entidades
 {
@@ -8,7 +8,7 @@ namespace CoreEscuela.Entidades
         public string Nombre { get; set; }
         public TiposJornada Jornada { get; set; }
 
-        public Curso() => (UniqueId) = (Guid.NewGuid().ToString());
+        public Curso() => (UniqueId) = (NewGuid().ToString());
 
         public string CursoInfo() => $"Nombre: {Nombre}\nJornada: {Jornada}\nUID: {UniqueId}";
         
