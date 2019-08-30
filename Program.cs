@@ -12,8 +12,6 @@ namespace etapa1
                 Pais = "Colombia"
             };
 
-            Escuela escuela2 = new Escuela("Platzi Escuela", 2012, TiposEscuela.Secundaria, "Venezuela", "Maturin");
-
             // array de cursos
 
             escuela.Cursos = new Curso[]
