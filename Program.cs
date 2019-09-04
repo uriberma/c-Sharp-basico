@@ -1,5 +1,6 @@
 ﻿using static System.Console;
 using CoreEscuela.Entidades;
+using System.Collections.Generic;
 
 namespace etapa1
 {
@@ -7,17 +8,14 @@ namespace etapa1
     {
         static void Main(string[] args)
         {
-            var escuela = new Escuela("Platzi Escuela", 2012, TiposEscuela.Primaria, ciudad: "Bogota")
-            {
-                Pais = "Colombia"
-            };
-            // array de cursos
+            var escuela = new Escuela("Platzi Escuela", 2012, TiposEscuela.Primaria, ciudad: "Bogota", pais: "Colombia");
 
-            escuela.Cursos = new Curso[]
+            // colectiones
+            escuela.Cursos = new List<Curso>()
             {
-                new Curso() { Nombre = "101", Jornada = TiposJornada.Manana },
-                new Curso() { Nombre = "201", Jornada = TiposJornada.Tarde },
-                new Curso() { Nombre = "301", Jornada = TiposJornada.Noche }
+                new Curso() { Nombre = "101" },
+                new Curso() { Nombre = "201"},
+                new Curso() { Nombre = "301" }
             };
 
             // ejecucion
