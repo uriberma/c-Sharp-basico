@@ -7,11 +7,10 @@ namespace etapa1
     {
         static void Main(string[] args)
         {
-            Escuela escuela = new Escuela("Platzi Escuela", 2012, TiposEscuela.Primaria, ciudad: "Bogota")
+            var escuela = new Escuela("Platzi Escuela", 2012, TiposEscuela.Primaria, ciudad: "Bogota")
             {
                 Pais = "Colombia"
             };
-
             // array de cursos
 
             escuela.Cursos = new Curso[]
