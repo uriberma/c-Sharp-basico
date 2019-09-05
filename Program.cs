@@ -28,7 +28,7 @@ namespace etapa1
             WriteLine("Cursos");
             WriteLine("=====================================================");
 
-
+            // agregar y borrar curso de prueba
             Curso tmp = new Curso() { Nombre = "101-Vacacional", Jornada = TiposJornada.Noche };
             escuela.Cursos.Add(tmp);
 
@@ -36,24 +36,39 @@ namespace etapa1
 
             WriteLine("=====================================================");
 
-            // escuela.Cursos.Remove(tmp);
-
-           /*
-             *  implementacion de un predicado para eliminar elementos en una lista    
-           */
+            /*
+             * implementacion de un predicado para eliminar elementos en una lista
+             * un delegado asegura que los parametros de entrada y de salida sean correctos y garantiza que se cumplan
+             */
             Predicate<Curso> miAlgoritmo = Predicado;
             escuela.Cursos.RemoveAll(miAlgoritmo);
+
+
+            // una manera mas corta de hacer lo mismo
+            escuela.Cursos.RemoveAll(delegate (Curso cur)
+                                    {
+                                        return cur.Nombre == "201";
+                                    });
+
+            // o usanda una expresion lambda ( usar cuando lo que se comprueba son pocos valores )
+            escuela.Cursos.RemoveAll((cur) => cur.Nombre == "101");
 
             ImprimirCursosEscuela(escuela);
 
         }
 
+
+        /*
+         * Algoritmo del predicado para la comprobacion d
+         */
         private static bool Predicado (Curso cursoobj)
         {
             return cursoobj.Nombre == "101-Vacacional";
         }
 
-
+       /* 
+        * Imprimir los cursos de la escuela
+        */
 
         private static void ImprimirCursosEscuela(Escuela escuela)
 
@@ -75,32 +90,35 @@ namespace etapa1
     }
 }
 
+/*
+ * IF ELSE FOR FOREACH WHILE DO WHILE
+ *  
+private static void ImprimirCursosWhile(Curso[] cursos)
+{
+   int contador = 0;
+   while (contador < cursos.Length)
+   {
+       WriteLine($"Nombre: {cursos[contador].Nombre}, id: {cursos[contador].UniqueId}");
+       contador++;
+   }
+}
 
-//private static void ImprimirCursosWhile(Curso[] cursos)
-//{
-//    int contador = 0;
-//    while (contador < cursos.Length)
-//    {
-//        WriteLine($"Nombre: {cursos[contador].Nombre}, id: {cursos[contador].UniqueId}");
-//        contador++;
-//    }
-//}
+private static void ImprimirCursosDoWhile(Curso[] cursos)
+{
+   int contador = 0;
+   do
+   {
+       WriteLine($"Nombre: {cursos[contador].Nombre}, id: {cursos[contador].UniqueId}");
+   }
+   while (++contador < cursos.Length);
+}
 
-//private static void ImprimirCursosDoWhile(Curso[] cursos)
-//{
-//    int contador = 0;
-//    do
-//    {
-//        WriteLine($"Nombre: {cursos[contador].Nombre}, id: {cursos[contador].UniqueId}");
-//    }
-//    while (++contador < cursos.Length);
-//}
+private static void ImprimirCursosFor(Curso[] cursos)
 
-//private static void ImprimirCursosFor(Curso[] cursos)
-
-//{
-//    for (int i = 0; i < cursos.Length; i++)
-//    {
-//        WriteLine($"Nombre: {cursos[i].Nombre}, id: {cursos[i].UniqueId}");
-//    }
-//}
+{
+   for (int i = 0; i < cursos.Length; i++)
+   {
+       WriteLine($"Nombre: {cursos[i].Nombre}, id: {cursos[i].UniqueId}");
+   }
+}
+*/
