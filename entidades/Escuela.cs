@@ -13,6 +13,7 @@ namespace CoreEscuela.Entidades
         public List<Curso> Cursos { get; set; }
 
         public Escuela(string nombre, int anio) => (Nombre, AnioDeCreacion) = (nombre, anio);
+
         public Escuela(string nombre, int anio, TiposEscuela tipo, string pais = "", string ciudad = "") =>
                         (Nombre, AnioDeCreacion, TipoEscuela, Pais, Ciudad) = 
                         (nombre, anio, tipo, pais, ciudad);
@@ -22,4 +23,4 @@ namespace CoreEscuela.Entidades
             return $"Nombre: {Nombre}\nTipo: {TipoEscuela}\nPais: {Pais}\nCiudad: {Ciudad}";
         }
     }
-}
+}   
