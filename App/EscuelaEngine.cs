@@ -1,5 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using CoreEscuela.utils;
 
 namespace CoreEscuela.Entidades
 {
@@ -10,6 +10,7 @@ namespace CoreEscuela.Entidades
         public EscuelaEngine()
         {
             Inicializar();
+            Printer.DibujarTitulo($"Bienvenidos a {Escuela.Nombre}");
         }
 
         public void Inicializar()

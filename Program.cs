@@ -1,6 +1,6 @@
 ﻿using static System.Console;
 using CoreEscuela.Entidades;
-using System.Collections.Generic;
+using CoreEscuela.utils;
 using System;
 
 namespace CoreEscuela
@@ -11,17 +11,11 @@ namespace CoreEscuela
         {
             var engine = new EscuelaEngine();
             engine.Inicializar();
+            Printer.Beep();
 
 
             // ejecucion
-            WriteLine(engine.Escuela.MuestraEscuela());
-            WriteLine("=====================================================");
-            WriteLine("Cursos");
-            WriteLine("=====================================================");
-            ImprimirCursosEscuela(engine.Escuela);
-
-            WriteLine("=====================================================");
-
+            Printer.DibujarTitulo("Cursos de la Escuela");
             /*
              * implementacion de un predicado para eliminar elementos en una lista
              * un delegado asegura que los parametros de entrada y de salida sean correctos y garantiza que se cumplan
