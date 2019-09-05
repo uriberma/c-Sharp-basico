@@ -3,36 +3,22 @@ using CoreEscuela.Entidades;
 using System.Collections.Generic;
 using System;
 
-namespace etapa1
+namespace CoreEscuela
 {
     class Program
     {
         static void Main(string[] args)
         {
-            var escuela = new Escuela("Platzi Escuela", 2012, TiposEscuela.Primaria, ciudad: "Bogota", pais: "Colombia");
+            var engine = new EscuelaEngine();
+            engine.Inicializar();
 
-            // colectiones
-            escuela.Cursos = new List<Curso>()
-            {
-                new Curso() { Nombre = "101", Jornada = TiposJornada.Tarde },
-                new Curso() { Nombre = "201", Jornada = TiposJornada.Manana },
-                new Curso() { Nombre = "301", Jornada = TiposJornada.Tarde }
-            };
-
-            escuela.Cursos.Add(new Curso() { Nombre = "102", Jornada = TiposJornada.Manana });
-            escuela.Cursos.Add(new Curso() { Nombre = "103", Jornada = TiposJornada.Manana });
 
             // ejecucion
-            WriteLine(escuela.MuestraEscuela());
+            WriteLine(engine.Escuela.MuestraEscuela());
             WriteLine("=====================================================");
             WriteLine("Cursos");
             WriteLine("=====================================================");
-
-            // agregar y borrar curso de prueba
-            Curso tmp = new Curso() { Nombre = "101-Vacacional", Jornada = TiposJornada.Noche };
-            escuela.Cursos.Add(tmp);
-
-            ImprimirCursosEscuela(escuela);
+            ImprimirCursosEscuela(engine.Escuela);
 
             WriteLine("=====================================================");
 
@@ -41,19 +27,19 @@ namespace etapa1
              * un delegado asegura que los parametros de entrada y de salida sean correctos y garantiza que se cumplan
              */
             Predicate<Curso> miAlgoritmo = Predicado;
-            escuela.Cursos.RemoveAll(miAlgoritmo);
+            engine.Escuela.Cursos.RemoveAll(miAlgoritmo);
 
 
             // una manera mas corta de hacer lo mismo
-            escuela.Cursos.RemoveAll(delegate (Curso cur)
+            engine.Escuela.Cursos.RemoveAll(delegate (Curso cur)
                                     {
                                         return cur.Nombre == "201";
                                     });
 
             // o usanda una expresion lambda ( usar cuando lo que se comprueba son pocos valores )
-            escuela.Cursos.RemoveAll((cur) => cur.Nombre == "101");
+            engine.Escuela.Cursos.RemoveAll((cur) => cur.Nombre == "101");
 
-            ImprimirCursosEscuela(escuela);
+            ImprimirCursosEscuela(engine.Escuela);
 
         }
 

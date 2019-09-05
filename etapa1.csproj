@@ -8,4 +8,7 @@
   <ItemGroup>
     <Compile Remove="entidades\newClass.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App\" />
+  </ItemGroup>
 </Project>
