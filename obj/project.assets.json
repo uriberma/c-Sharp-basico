@@ -692,9 +692,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/maycolur7/source/courses/platzi/fundamentos_c#_.net_core/etapa1/etapa1.csproj",
-      "projectName": "etapa1",
-      "projectPath": "/Users/maycolur7/source/courses/platzi/fundamentos_c#_.net_core/etapa1/etapa1.csproj",
+      "projectUniqueName": "/Users/maycolur7/source/courses/platzi/fundamentos_c#_.net_core/etapa1/CoreEscuela.csproj",
+      "projectName": "CoreEscuela",
+      "projectPath": "/Users/maycolur7/source/courses/platzi/fundamentos_c#_.net_core/etapa1/CoreEscuela.csproj",
       "packagesPath": "/Users/maycolur7/.nuget/packages/",
       "outputPath": "/Users/maycolur7/source/courses/platzi/fundamentos_c#_.net_core/etapa1/obj/",
       "projectStyle": "PackageReference",

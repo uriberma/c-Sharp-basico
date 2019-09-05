@@ -9,10 +9,9 @@ namespace CoreEscuela
     {
         static void Main(string[] args)
         {
+            // instanciar escuela
             var engine = new EscuelaEngine();
             engine.Inicializar();
-            Printer.Beep();
-
 
             // ejecucion
             Printer.DibujarTitulo("Cursos de la Escuela");
@@ -69,36 +68,3 @@ namespace CoreEscuela
 
     }
 }
-
-/*
- * IF ELSE FOR FOREACH WHILE DO WHILE
- *  
-private static void ImprimirCursosWhile(Curso[] cursos)
-{
-   int contador = 0;
-   while (contador < cursos.Length)
-   {
-       WriteLine($"Nombre: {cursos[contador].Nombre}, id: {cursos[contador].UniqueId}");
-       contador++;
-   }
-}
-
-private static void ImprimirCursosDoWhile(Curso[] cursos)
-{
-   int contador = 0;
-   do
-   {
-       WriteLine($"Nombre: {cursos[contador].Nombre}, id: {cursos[contador].UniqueId}");
-   }
-   while (++contador < cursos.Length);
-}
-
-private static void ImprimirCursosFor(Curso[] cursos)
-
-{
-   for (int i = 0; i < cursos.Length; i++)
-   {
-       WriteLine($"Nombre: {cursos[i].Nombre}, id: {cursos[i].UniqueId}");
-   }
-}
-*/

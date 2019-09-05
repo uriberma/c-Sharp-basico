@@ -1,7 +1,7 @@
 
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "etapa1", "etapa1.csproj", "{C290419A-8DBF-45FD-AF52-032FAD5646F3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoreEscuela", "CoreEscuela.csproj", "{C290419A-8DBF-45FD-AF52-032FAD5646F3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
