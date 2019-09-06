@@ -3,10 +3,8 @@ using static System.Guid;
 
 namespace CoreEscuela.Entidades
 {
-    public class Escuela
+    public class Escuela: ObjetoEscuelaBase
     {
-        public string UniqueId { get; private set; } = NewGuid().ToString();
-        public string Nombre { get; set; }
         public int AnioDeCreacion { get; set; }
         public string Pais { get; set; }
         public string Ciudad { get; set; }       

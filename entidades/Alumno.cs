@@ -1,13 +1,10 @@
-﻿using CoreEscuela.Entidades;
+﻿using System.Collections.Generic;
 using static System.Guid;
 
 namespace CoreEscuela.Entidades
 {
-    public class Alumno
+    public class Alumno: ObjetoEscuelaBase
     {
-        public string UniqueId { get; private set; } = NewGuid().ToString();
-        public string Nombre { get; set; }
-        public TiposJornada Jornada { get; set; }
         public List<Evaluacion> ListaEvaluaciones { get; set; } = new List<Evaluacion>();
     }
 }

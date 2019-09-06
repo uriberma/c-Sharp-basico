@@ -2,10 +2,8 @@
 
 namespace CoreEscuela.Entidades
 {
-    public class Evaluacion
+    public class Evaluacion: ObjetoEscuelaBase
     {
-        public string UniqueId { get; private set; } = NewGuid().ToString();
-        public string Nombre { get; set; }
         public Alumno Alumno { get; set; }
         public Asignatura Asignatura { get; set; }
         public float Nota { get; set; }
