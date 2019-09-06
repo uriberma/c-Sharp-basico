@@ -8,5 +8,6 @@ namespace CoreEscuela.Entidades
         public string UniqueId { get; private set; } = NewGuid().ToString();
         public string Nombre { get; set; }
         public TiposJornada Jornada { get; set; }
+        public List<Evaluacion> ListaEvaluaciones { get; set; } = new List<Evaluacion>();
     }
 }

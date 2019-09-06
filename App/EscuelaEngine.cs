@@ -22,7 +22,7 @@ namespace CoreEscuela.Entidades
             // cargar cursos alumnos asignaturas y evaluaciones
             CargarCursos();
             CargarAsignaturas();
-
+            CargarEvaluaciones();
         }
 
         public void CargarCursos()
@@ -77,9 +77,27 @@ namespace CoreEscuela.Entidades
 
         private void CargarEvaluaciones()
         {
-            throw new NotImplementedException();
+            Random rnd = new Random();
+            foreach (var curso in Escuela.Cursos)
+            {
+                foreach (var asignatura in curso.Asignaturas)
+                {
+                    foreach (var alumno in curso.Alumnos)
+                    {
+                        for (var i = 0; i < asignatura.NumeroEvaluaciones; i++)
+                        {
+
+                            alumno.ListaEvaluaciones.Add(new Evaluacion()
+                            {
+                                Nombre = $"evaluacion {i + 1}",
+                                Alumno = alumno,
+                                Asignatura = asignatura,
+                                Nota = (float)(rnd.NextDouble() * (5.0 - 1.0) + 1.0)
+                            });
+                        }
+                    }
+                }
+            }
         }
-
-
     }
 }
