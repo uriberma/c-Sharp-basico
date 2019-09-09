@@ -12,7 +12,7 @@ namespace CoreEscuela.Entidades
         public EscuelaEngine()
         {
             Inicializar();
-            Printer.DibujarTitulo($"Bienvenidos a {Escuela.Nombre}");
+            Printer.WriteTitle($"Bienvenidos a {Escuela.Nombre}");
         }
 
         public void Inicializar()

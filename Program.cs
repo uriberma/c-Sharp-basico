@@ -14,11 +14,9 @@ namespace CoreEscuela
             engine.Inicializar();
 
             // ejecucion
-            Printer.DibujarTitulo("Cursos de la Escuela");
+            Printer.WriteTitle("Cursos de la Escuela");
             ImprimirCursosEscuela(engine.Escuela);
-
         }
-
 
        /* 
         * Imprimir los cursos de la escuela
