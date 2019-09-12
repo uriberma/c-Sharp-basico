@@ -1,15 +1,17 @@
 using System.Collections.Generic;
-using static System.Guid;
+using System;
+using CoreEscuela.utils;
 
 namespace CoreEscuela.Entidades
 {
-    public class Escuela: ObjetoEscuelaBase
+    public class Escuela: ObjetoEscuelaBase, ILugar
     {
         public int AnioDeCreacion { get; set; }
         public string Pais { get; set; }
         public string Ciudad { get; set; }       
         public TiposEscuela TipoEscuela { get; set; }
         public List<Curso> Cursos { get; set; }
+        public string Direccion { get; set; }
 
         public Escuela(string nombre, int anio) => (Nombre, AnioDeCreacion) = (nombre, anio);
 
@@ -20,6 +22,17 @@ namespace CoreEscuela.Entidades
         public string MuestraEscuela()
         {
             return $"Nombre: {Nombre}\nTipo: {TipoEscuela}\nPais: {Pais}\nCiudad: {Ciudad}";
+        }
+
+        public void LimpiarLugar()
+        {
+            Printer.DrawLine();
+            Console.WriteLine("Limpiando Establecimiento...");
+
+            foreach (var curso in Cursos)
+            {
+                curso.LimpiarLugar();
+            }
         }
     }
 }   

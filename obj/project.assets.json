@@ -692,17 +692,17 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/maycolur7/source/courses/platzi/fundamentos_c#_.net_core/etapa1/CoreEscuela.csproj",
+      "projectUniqueName": "/Users/maycolur7/Library/Mobile Documents/com~apple~CloudDocs/source/courses/platzi/fundamentos_c#_.net_core/CoreEscuela/CoreEscuela.csproj",
       "projectName": "CoreEscuela",
-      "projectPath": "/Users/maycolur7/source/courses/platzi/fundamentos_c#_.net_core/etapa1/CoreEscuela.csproj",
+      "projectPath": "/Users/maycolur7/Library/Mobile Documents/com~apple~CloudDocs/source/courses/platzi/fundamentos_c#_.net_core/CoreEscuela/CoreEscuela.csproj",
       "packagesPath": "/Users/maycolur7/.nuget/packages/",
-      "outputPath": "/Users/maycolur7/source/courses/platzi/fundamentos_c#_.net_core/etapa1/obj/",
+      "outputPath": "/Users/maycolur7/Library/Mobile Documents/com~apple~CloudDocs/source/courses/platzi/fundamentos_c#_.net_core/CoreEscuela/obj/",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "/Users/maycolur7/.nuget/NuGet/NuGet.Config"
+        "/Users/maycolur7/.config/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp2.2"
