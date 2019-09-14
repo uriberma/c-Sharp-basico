@@ -25,6 +25,25 @@ namespace CoreEscuela.Entidades
             CargarEvaluaciones();
         }
 
+        public List<ObjetoEscuelaBase> GetObjetosEscuela()
+        {
+            var listaObj = new List<ObjetoEscuelaBase>();
+            listaObj.Add(Escuela);
+            listaObj.AddRange(Escuela.Cursos);
+            foreach (var curso in Escuela.Cursos) 
+            {
+                listaObj.AddRange(curso.Asignaturas);
+                listaObj.AddRange(curso.Alumnos);
+
+                foreach (var alumno in curso.Alumnos)
+                {
+                    listaObj.AddRange(alumno.ListaEvaluaciones);
+                }
+            }
+
+            return listaObj;
+        }
+        #region Metodos de carga
         public void CargarCursos()
         {
             Escuela.Cursos = new List<Curso>()
@@ -37,7 +56,7 @@ namespace CoreEscuela.Entidades
                     new Curso() { Nombre = "601", Jornada = TiposJornada.Tarde }
                 };
             Random rnd = new Random();
-            foreach(var c in Escuela.Cursos)
+            foreach (var c in Escuela.Cursos)
             {
                 int cantidadRandom = rnd.Next(20, 45);
                 c.Alumnos = GenerarAlumnosAlAzar(cantidadRandom);
@@ -99,24 +118,6 @@ namespace CoreEscuela.Entidades
                 }
             }
         }
-
-        public List<ObjetoEscuelaBase> GetObjetosEscuela()
-        {
-            var listaObj = new List<ObjetoEscuelaBase>();
-            listaObj.Add(Escuela);
-            listaObj.AddRange(Escuela.Cursos);
-            foreach (var curso in Escuela.Cursos) 
-            {
-                listaObj.AddRange(curso.Asignaturas);
-                listaObj.AddRange(curso.Alumnos);
-
-                foreach (var alumno in curso.Alumnos)
-                {
-                    listaObj.AddRange(alumno.ListaEvaluaciones);
-                }
-            }
-
-            return listaObj;
-        }
+        #endregion
     }
 }
