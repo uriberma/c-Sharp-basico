@@ -25,24 +25,60 @@ namespace CoreEscuela.Entidades
             CargarEvaluaciones();
         }
 
-        public List<ObjetoEscuelaBase> GetObjetosEscuela()
+        public List<ObjetoEscuelaBase> GetObjetosEscuela(
+            out int conteoEvaluaciones,
+            out int conteoAlumnos,
+            out int conteoAsignaturas,
+            out int conteoCursos,
+            bool traeEvaluaciones = true,
+            bool traerAlumnos = true,
+            bool traerAsignaturas = true,
+            bool traerCursos = true
+            )
         {
+            conteoEvaluaciones = conteoAlumnos = conteoAsignaturas = 0;
+
             var listaObj = new List<ObjetoEscuelaBase>();
             listaObj.Add(Escuela);
-            listaObj.AddRange(Escuela.Cursos);
-            foreach (var curso in Escuela.Cursos) 
-            {
-                listaObj.AddRange(curso.Asignaturas);
-                listaObj.AddRange(curso.Alumnos);
 
-                foreach (var alumno in curso.Alumnos)
+            if (traerCursos)
+            {
+                listaObj.AddRange(Escuela.Cursos);
+            }
+
+            conteoCursos = Escuela.Cursos.Count;
+
+            foreach (var curso in Escuela.Cursos)
+            {
+                conteoAsignaturas += curso.Asignaturas.Count;
+                conteoAlumnos += curso.Alumnos.Count;
+
+                if (traerAsignaturas)
                 {
-                    listaObj.AddRange(alumno.ListaEvaluaciones);
+                    listaObj.AddRange(curso.Asignaturas);
+
                 }
+
+
+                if (traerAlumnos)
+                {
+                    listaObj.AddRange(curso.Alumnos);
+                }
+
+                if (traeEvaluaciones)
+                {
+                    foreach (var alumno in curso.Alumnos)
+                    {
+                        listaObj.AddRange(alumno.ListaEvaluaciones);
+                        conteoEvaluaciones += alumno.ListaEvaluaciones.Count;
+                    }
+                }
+               
             }
 
             return listaObj;
         }
+
         #region Metodos de carga
         public void CargarCursos()
         {

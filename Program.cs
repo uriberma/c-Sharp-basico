@@ -17,16 +17,12 @@ namespace CoreEscuela
             // ejecucion
             Printer.WriteTitle("Cursos de la Escuela");
             ImprimirCursosEscuela(engine.Escuela);
-            var listObjetos = engine.GetObjetosEscuela();
-
-            // buscar objetos que cumplan con la Interface ILugar
-            var listILugar = from obj in listObjetos
-                             where obj is ILugar
-                             select (ILugar)obj;
-
-            var alumnos = from obj in listObjetos
-                          where obj is Alumno
-                          select (Alumno)obj;
+            var listObjetos = engine.GetObjetosEscuela(
+            out int conteoEvaluaciones,
+            out int conteoAlumnos,
+            out int conteoAsignaturas,
+            out int conteoCursos
+            );
         }
 
        /* 
