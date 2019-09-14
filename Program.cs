@@ -2,6 +2,7 @@
 using CoreEscuela.Entidades;
 using CoreEscuela.utils;
 using System;
+using System.Linq;
 
 namespace CoreEscuela
 {
@@ -17,6 +18,15 @@ namespace CoreEscuela
             Printer.WriteTitle("Cursos de la Escuela");
             ImprimirCursosEscuela(engine.Escuela);
             var listObjetos = engine.GetObjetosEscuela();
+
+            // buscar objetos que cumplan con la Interface ILugar
+            var listILugar = from obj in listObjetos
+                             where obj is ILugar
+                             select (ILugar)obj;
+
+            var alumnos = from obj in listObjetos
+                          where obj is Alumno
+                          select (Alumno)obj;
         }
 
        /* 
