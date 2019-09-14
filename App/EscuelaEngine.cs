@@ -25,7 +25,7 @@ namespace CoreEscuela.Entidades
             CargarEvaluaciones();
         }
 
-        public List<ObjetoEscuelaBase> GetObjetosEscuela(
+        public IReadOnlyList<ObjetoEscuelaBase> GetObjetosEscuela(
             bool traeEvaluaciones = true,
             bool traerAlumnos = true,
             bool traerAsignaturas = true,
@@ -35,7 +35,7 @@ namespace CoreEscuela.Entidades
             return GetObjetosEscuela(out int dummy, out dummy, out dummy, out dummy);
         }
 
-        public List<ObjetoEscuelaBase> GetObjetosEscuela(
+        public IReadOnlyList<ObjetoEscuelaBase> GetObjetosEscuela(
             out int conteoEvaluaciones,
             bool traeEvaluaciones = true,
             bool traerAlumnos = true,
@@ -46,7 +46,7 @@ namespace CoreEscuela.Entidades
             return GetObjetosEscuela(out conteoEvaluaciones, out int dummy, out dummy, out dummy);
         }
 
-        public List<ObjetoEscuelaBase> GetObjetosEscuela(
+        public IReadOnlyList<ObjetoEscuelaBase> GetObjetosEscuela(
           out int conteoEvaluaciones,
           out int conteoAlumnos,
           bool traeEvaluaciones = true,
@@ -71,7 +71,7 @@ namespace CoreEscuela.Entidades
             return GetObjetosEscuela(out conteoEvaluaciones, out conteoAlumnos, out conteoAsignaturas);
         }
 
-        public List<ObjetoEscuelaBase> GetObjetosEscuela(
+        public IReadOnlyList<ObjetoEscuelaBase> GetObjetosEscuela(
             out int conteoEvaluaciones,
             out int conteoAlumnos,
             out int conteoAsignaturas,
@@ -122,7 +122,7 @@ namespace CoreEscuela.Entidades
                
             }
 
-            return listaObj;
+            return listaObj.AsReadOnly();
         }
 
         #region Metodos de carga
