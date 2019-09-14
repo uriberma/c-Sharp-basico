@@ -26,6 +26,52 @@ namespace CoreEscuela.Entidades
         }
 
         public List<ObjetoEscuelaBase> GetObjetosEscuela(
+            bool traeEvaluaciones = true,
+            bool traerAlumnos = true,
+            bool traerAsignaturas = true,
+            bool traerCursos = true
+            )
+        {
+            return GetObjetosEscuela(out int dummy, out dummy, out dummy, out dummy);
+        }
+
+        public List<ObjetoEscuelaBase> GetObjetosEscuela(
+            out int conteoEvaluaciones,
+            bool traeEvaluaciones = true,
+            bool traerAlumnos = true,
+            bool traerAsignaturas = true,
+            bool traerCursos = true
+            )
+        {
+            return GetObjetosEscuela(out conteoEvaluaciones, out int dummy, out dummy, out dummy);
+        }
+
+        public List<ObjetoEscuelaBase> GetObjetosEscuela(
+          out int conteoEvaluaciones,
+          out int conteoAlumnos,
+          bool traeEvaluaciones = true,
+          bool traerAlumnos = true,
+          bool traerAsignaturas = true,
+          bool traerCursos = true
+          )
+        {
+            return GetObjetosEscuela(out conteoEvaluaciones, out conteoAlumnos, out int dummy, out dummy);
+        }
+
+        public List<ObjetoEscuelaBase> GetObjetosEscuela(
+         out int conteoEvaluaciones,
+         out int conteoAlumnos,
+         out int conteoAsignaturas,
+         bool traeEvaluaciones = true,
+         bool traerAlumnos = true,
+         bool traerAsignaturas = true,
+         bool traerCursos = true
+         )
+        {
+            return GetObjetosEscuela(out conteoEvaluaciones, out conteoAlumnos, out conteoAsignaturas);
+        }
+
+        public List<ObjetoEscuelaBase> GetObjetosEscuela(
             out int conteoEvaluaciones,
             out int conteoAlumnos,
             out int conteoAsignaturas,
@@ -33,7 +79,7 @@ namespace CoreEscuela.Entidades
             bool traeEvaluaciones = true,
             bool traerAlumnos = true,
             bool traerAsignaturas = true,
-            bool traerCursos = true
+            bool traerCursos = true 
             )
         {
             conteoEvaluaciones = conteoAlumnos = conteoAsignaturas = 0;

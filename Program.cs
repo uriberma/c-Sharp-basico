@@ -17,12 +17,7 @@ namespace CoreEscuela
             // ejecucion
             Printer.WriteTitle("Cursos de la Escuela");
             ImprimirCursosEscuela(engine.Escuela);
-            var listObjetos = engine.GetObjetosEscuela(
-            out int conteoEvaluaciones,
-            out int conteoAlumnos,
-            out int conteoAsignaturas,
-            out int conteoCursos
-            );
+            var listObjetos = engine.GetObjetosEscuela(out int cEv,out int cAlumn, out int cAsig, out int cCurs, traerCursos: true);
         }
 
        /* 
