@@ -19,6 +19,7 @@ namespace CoreEscuela
             Printer.WriteTitle("Cursos de la Escuela");
 
             var diccionarioobj = engine.GetDiccionarioObjetos();
+            engine.ImprimirDiccionario(diccionarioobj);
         }
 
        /* 

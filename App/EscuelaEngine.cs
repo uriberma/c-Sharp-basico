@@ -25,12 +25,43 @@ namespace CoreEscuela.Entidades
             CargarEvaluaciones();
         }
 
+        public void ImprimirDiccionario(Dictionary<LlavesDiccionario, IEnumerable<ObjetoEscuelaBase>> dic)
+        {
+            foreach (var obj in dic)
+            {
+                Printer.WriteTitle(obj.Key.ToString());
+
+                foreach (var val in obj.Value)
+                {
+                    Console.WriteLine(val);
+                }
+            }
+        }
+
         public Dictionary<LlavesDiccionario, IEnumerable<ObjetoEscuelaBase>> GetDiccionarioObjetos()
         {
             var diccionario = new Dictionary<LlavesDiccionario, IEnumerable<ObjetoEscuelaBase>>();
+            var listAlumnos = new List<Alumno>();
+            var listAsignatura = new List<Asignatura>();
+            var listEvaluaciones = new List<Evaluacion>();
 
             diccionario.Add(LlavesDiccionario.Escuela, new List<ObjetoEscuelaBase> { Escuela });
             diccionario.Add(LlavesDiccionario.Curso, Escuela.Cursos );
+
+            foreach (var curso in Escuela.Cursos)
+            {
+                listAlumnos.AddRange(curso.Alumnos);
+                listAsignatura.AddRange(curso.Asignaturas);
+
+                foreach (var alumno in curso.Alumnos)
+                {
+                    listEvaluaciones.AddRange(alumno.ListaEvaluaciones);
+                }
+            }
+
+            diccionario.Add(LlavesDiccionario.Alumno, listAlumnos);
+            diccionario.Add(LlavesDiccionario.Asignatura, listAsignatura);
+            diccionario.Add(LlavesDiccionario.Evaluacion, listEvaluaciones);
 
             return diccionario;
         }
