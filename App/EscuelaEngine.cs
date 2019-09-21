@@ -25,6 +25,16 @@ namespace CoreEscuela.Entidades
             CargarEvaluaciones();
         }
 
+        public Dictionary<LlavesDiccionario, IEnumerable<ObjetoEscuelaBase>> GetDiccionarioObjetos()
+        {
+            var diccionario = new Dictionary<LlavesDiccionario, IEnumerable<ObjetoEscuelaBase>>();
+
+            diccionario.Add(LlavesDiccionario.Escuela, new List<ObjetoEscuelaBase> { Escuela });
+            diccionario.Add(LlavesDiccionario.Curso, Escuela.Cursos );
+
+            return diccionario;
+        }
+
         public IReadOnlyList<ObjetoEscuelaBase> GetObjetosEscuela(
             bool traeEvaluaciones = true,
             bool traerAlumnos = true,
@@ -58,7 +68,7 @@ namespace CoreEscuela.Entidades
             return GetObjetosEscuela(out conteoEvaluaciones, out conteoAlumnos, out int dummy, out dummy);
         }
 
-        public List<ObjetoEscuelaBase> GetObjetosEscuela(
+        public IReadOnlyList<ObjetoEscuelaBase> GetObjetosEscuela(
          out int conteoEvaluaciones,
          out int conteoAlumnos,
          out int conteoAsignaturas,
