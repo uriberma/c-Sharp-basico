@@ -25,7 +25,7 @@ namespace CoreEscuela.Entidades
             CargarEvaluaciones();
         }
 
-        public void ImprimirDiccionario(Dictionary<LlavesDiccionario, IEnumerable<ObjetoEscuelaBase>> dic)
+        public void ImprimirDiccionario(Dictionary<LlavesDiccionario, IEnumerable<ObjetoEscuelaBase>> dic, bool imprimirEval = false)
         {
             foreach (var obj in dic)
             {
@@ -33,7 +33,31 @@ namespace CoreEscuela.Entidades
 
                 foreach (var val in obj.Value)
                 {
-                    Console.WriteLine(val);
+                   switch (obj.Key)
+                    {
+                        case LlavesDiccionario.Evaluacion:
+                            if (imprimirEval)
+                                Console.WriteLine(val);
+                            break;
+
+                        case LlavesDiccionario.Escuela:
+                            Console.WriteLine($"Escuela {val}");
+                            break;
+
+                        case LlavesDiccionario.Alumno:
+                            Console.WriteLine($"Alumno: {val}");
+                            break;
+
+                        case LlavesDiccionario.Curso:
+                            var cursoTmp = val as Curso;
+                            if (cursoTmp != null)
+                                Console.WriteLine($"Curso: {val.Nombre}, Cantidad de alumnos: {cursoTmp.Alumnos}");
+                            break;
+
+                        default:
+                            Console.WriteLine(val);
+                            break;
+                    }
                 }
             }
         }
@@ -234,7 +258,7 @@ namespace CoreEscuela.Entidades
                                 Nombre = $"evaluacion {i + 1}",
                                 Alumno = alumno,
                                 Asignatura = asignatura,
-                                Nota = (float)(rnd.NextDouble() * (5.0 - 1.0) + 1.0)
+                                Nota = MathF.Round((float)(5 * rnd.NextDouble()),2)
                             });
                         }
                     }
