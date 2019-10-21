@@ -1,9 +1,9 @@
-﻿using static System.Console;
-using CoreEscuela.Entidades;
+﻿using CoreEscuela.Entidades;
 using CoreEscuela.utils;
 using System;
-using System.Linq;
+
 using System.Collections.Generic;
+
 using CoreEscuela.App;
 
 namespace CoreEscuela
@@ -29,6 +29,17 @@ namespace CoreEscuela
             var listaEvalAsig = reporteador.GetDicEvaluacionesXAsig();
 
             var listPromXAsig = reporteador.getPromedioAlumnoXAsinatura();
+
+            Console.WriteLine(fibonacci(19));
+
+        }
+
+        public static long fibonacci(long n)
+        {
+            if (n <= 1) return 1;
+                
+            return fibonacci(n - 1 ) + fibonacci(n - 2);
+           
         }
 
     }
