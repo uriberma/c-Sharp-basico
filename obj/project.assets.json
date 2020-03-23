@@ -8,19 +8,19 @@
     ".NETCoreApp,Version=v3.0": []
   },
   "packageFolders": {
-    "/Users/mruribe/.nuget/packages/": {}
+    "/Users/uriberma/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/mruribe/Library/Mobile Documents/com~apple~CloudDocs/source/courses/platzi/fundamentos_c#_.net_core/CoreEscuela/CoreEscuela.csproj",
+      "projectUniqueName": "/Users/uriberma/source/projects/platzi-escuela/c-Sharp-basico/CoreEscuela.csproj",
       "projectName": "CoreEscuela",
-      "projectPath": "/Users/mruribe/Library/Mobile Documents/com~apple~CloudDocs/source/courses/platzi/fundamentos_c#_.net_core/CoreEscuela/CoreEscuela.csproj",
-      "packagesPath": "/Users/mruribe/.nuget/packages/",
-      "outputPath": "/Users/mruribe/Library/Mobile Documents/com~apple~CloudDocs/source/courses/platzi/fundamentos_c#_.net_core/CoreEscuela/obj/",
+      "projectPath": "/Users/uriberma/source/projects/platzi-escuela/c-Sharp-basico/CoreEscuela.csproj",
+      "packagesPath": "/Users/uriberma/.nuget/packages/",
+      "outputPath": "/Users/uriberma/source/projects/platzi-escuela/c-Sharp-basico/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/Users/mruribe/.nuget/NuGet/NuGet.Config"
+        "/Users/uriberma/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp3.0"
@@ -51,12 +51,22 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
+        "downloadDependencies": [
+          {
+            "name": "Microsoft.AspNetCore.App.Ref",
+            "version": "[3.0.1, 3.0.1]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Ref",
+            "version": "[3.0.0, 3.0.0]"
+          }
+        ],
         "frameworkReferences": {
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/3.0.100/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/3.1.102/RuntimeIdentifierGraph.json"
       }
     }
   }
